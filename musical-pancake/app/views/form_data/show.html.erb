@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @form_datum.number %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @form_datum.street %>
+</p>
+
+<p>
+  <strong>Postal code:</strong>
+  <%= @form_datum.postal_code %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @form_datum.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @form_datum.country %>
+</p>
+
+<%= link_to 'Edit', edit_form_datum_path(@form_datum) %> |
+<%= link_to 'Back', form_data_path %>

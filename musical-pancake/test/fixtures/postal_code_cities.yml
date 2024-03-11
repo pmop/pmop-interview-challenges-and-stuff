@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  postal_number: MyString
+  city: MyString
+  type_pc: MyString
+  lower_boundary: 1
+  upper_boundary: 1
+  source_timestamp: 2022-05-03
+
+two:
+  postal_number: MyString
+  city: MyString
+  type_pc: MyString
+  lower_boundary: 1
+  upper_boundary: 1
+  source_timestamp: 2022-05-03

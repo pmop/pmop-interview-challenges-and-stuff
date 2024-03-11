@@ -1,0 +1,49 @@
+<%= form_with(model: form_datum, html: { 'data-controller' => 'form-data' }) do |form| %>
+  <% if form_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(form_datum.errors.count, "error") %> prohibited this form_datum from being saved:</h2>
+
+      <ul>
+        <% form_datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <div style='display: flex; flex-direction: row; justify-content: space-around; column-gap: 10px;'>
+      <div class="field" style='width: 150px;'>
+        <%= form.label :number %>
+        <%= form.collection_select :id, @street_numbers, :number, :number, {}, { 'id' => 'number-selector' } %>
+      </div>
+
+      <div class="field" style='width: 100%;'>
+        <%= form.label :street %>
+        <%= form.collection_select :id, @city_streets, :street, :street, {}, { 'id' => 'street-selector', 'data-action' => 'change->form-data#streetSelectHandler' } %>
+      </div>
+    </div>
+
+    <div style='display: flex; flex-direction: row; column-gap: 10px;'>
+      <div class="field" style='width: 150px;'>
+        <%= form.label :postal_code %>
+        <%= form.text_field :postal_code, { 'data-action' => 'input->form-data#postalCodeHandler', 'data-form-data-target' => 'postalCodeField' } %>
+      </div>
+
+      <div class="field" style='width: 100%;'>
+        <%= form.label :city %>
+        <%#<%= form.select :city, @communes.pluck(:name_upper_case).to_a %>
+        <%= form.collection_select :city_id, Commune.order(:name), :name_upper_case, :name, {}, { 'data-action' => 'change->form-data#citySelectHandler', 'data-form-data-target' => 'citySelect', 'id' => 'city-select' } %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :country %>
+      <%= form.select :country, ['Luxembourg'] %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

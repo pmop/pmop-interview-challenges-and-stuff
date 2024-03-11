@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Form Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Street</th>
+      <th>Postal code</th>
+      <th>City</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @form_data.each do |form_datum| %>
+      <tr>
+        <td><%= form_datum.number %></td>
+        <td><%= form_datum.street %></td>
+        <td><%= form_datum.postal_code %></td>
+        <td><%= form_datum.city %></td>
+        <td><%= form_datum.country %></td>
+        <td><%= link_to 'Show', form_datum %></td>
+        <td><%= link_to 'Edit', edit_form_datum_path(form_datum) %></td>
+        <td><%= link_to 'Destroy', form_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Form Datum', new_form_datum_path %>

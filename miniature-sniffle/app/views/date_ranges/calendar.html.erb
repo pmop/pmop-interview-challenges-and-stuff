@@ -1,0 +1,6 @@
+<div data-controller="hello" data-hello-request="<%= current_user.email + "@#{Rails.configuration.app_name}" %>" data-hello-appname="<%= Rails.configuration.app_name %>">
+  <div id="datepicker"/>
+
+
+  <input type="button" value="Submit" data-action="click->hello#createDateRangeBlock"/>
+</div>

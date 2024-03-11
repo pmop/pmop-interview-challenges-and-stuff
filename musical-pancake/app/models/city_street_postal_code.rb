@@ -1,0 +1,2 @@
+class CityStreetPostalCode < ApplicationRecord
+end
