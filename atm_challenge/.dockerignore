@@ -1,0 +1,5 @@
+.bundle
+.git
+.gitignore
+.ruby-lsp
+bin/

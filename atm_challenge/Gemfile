@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+ruby '>= 3.1.0'
+
+source 'https://rubygems.org'
+
+# Best testing framework in the Ruby ecosystem
+gem 'rspec', '3.13'
+# Autoload
+gem 'zeitwerk', '2.6'
+
+gem "sinatra", "~> 4.0"
+gem "rackup", "~> 2.1"
+gem "puma", ">= 6.4"
